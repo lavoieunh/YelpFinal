@@ -28,7 +28,7 @@ PHONE_NUMBER = "+1{}".format(USER_PHONE)
 
 SEARCH_PHONE = "{0}{1}".format(PHONE_PATH, PHONE_NUMBER)
 
-#auth = yellauth.Auth()
+#autho = yellauth.Auth()
 #aut = auth.automa(host=API_HOST, path=SEARCH_PATH, api_key=API_KEY)
 
 def auth(host, path, api_key, url_params=None):
@@ -37,8 +37,9 @@ def auth(host, path, api_key, url_params=None):
     headers = {
         'Authorization': 'Bearer %s' % api_key,
     }
-    response = requests.auth('GET', url, headers=headers, params=url_params)
-    return response.json
+
+client = auth
+
 
 @app.route('/business')
 
@@ -52,7 +53,7 @@ def business_query(api_key=API_KEY, path=foodinput, url_params=None):
             input_location
         }
 
-        respone = auth(API_KEY, path, )
+        #respone = auth(API_KEY, path, )
         return auth(host=API_HOST, path=SEARCH_PATH, api_key=API_KEY, url_params=url_params)
 
 
@@ -79,8 +80,8 @@ def phone_number_query(host=API_HOST, path=PHONE_PATH, api_key=API_KEY, url_para
 
     return auth(host=API_HOST, path=PHONE_PATH, api_key=API_KEY, url_params=url_params)
 
-query = business_query()
-phone = phone_number_query()
+#query = business_query()
+#phone = phone_number_query()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
