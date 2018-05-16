@@ -4,8 +4,7 @@ import urllib.error
 import urllib.request
 
 
-api_key= 'gaoLv6PFU7nmgHAy2b2d7TVGrEzb5hSKbHZBpS-KIrZAgkkhtOtTJClZbYWKvNPaJXbd4l43Q-7h4SvAJJ-Zbs2BJ4IZ3AILc6-cwQS7hL4M_6LM4ikR1Qajs7j3WXYx' 
-
+api_key= ''
 
 # API constants, you shouldn't have to change these.
 API_HOST = 'https://api.yelp.com'
